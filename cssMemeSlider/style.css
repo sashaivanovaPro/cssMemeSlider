@@ -10,35 +10,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 100px;
+  padding: 20px 100px 0;
 }
 
 .slider-wrapper {
   width: 100%;
+  height: 500px;
   overflow: hidden;
 }
 
-.img {
-  width: 100%;
-  height: auto;
-  border-radius: 2%;
-  object-fit: fill;
+.slides {
+  position: relative;
+  width: 400%;
+  max-height: 450px;
+  display: flex;
 }
 
 input[name="meme"] {
   display: none;
 }
 
-.slides {
-  position: relative;
-  width: 400%;
-  height: 100%;
-  display: flex;
-}
-
 .slide {
   width: 25%;
   transition: all 0.6s ease;
+}
+
+.img {
+  width: 100%;
+  max-height: 430px;
+  border-radius: 2%;
 }
 
 #meme1:checked ~ .slide1 {
@@ -57,39 +57,27 @@ input[name="meme"] {
   margin-left: -75%;
 }
 
-.slider-info {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.slider-text {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  width: 400%;
-  height: 100%;
-  gap: 20px;
-  flex-basis: 35%;
-}
-
-.slider-controls {
-  display: flex;
-  justify-content: space-between;
+label {
+  transition: opacity 0.5s ease;
 }
 
 .meme-text {
-  white-space: nowrap;
-  width: 100%;
+  position: absolute;
+  /* left: 20px; */
+  bottom: -34px;
+  opacity: 0;
   font-family: "Courier New", Courier, monospace;
-  font-size: 32px;
+  font-size: 24px;
+  line-height: 32px;
   color: white;
 }
 
 .control {
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgb(114, 114, 210);
+  position: absolute;
+  bottom: -30px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgb(114, 114, 210);
   border-radius: 50%;
   margin: 6px;
   cursor: pointer;
@@ -97,9 +85,37 @@ input[name="meme"] {
   transition: all 0.4s ease;
 }
 
-.control:active {
-  background-color: beige;
-  border: 4px solid beige;
+.control1 {
+  left: calc(25% - 79px);
+}
+
+.control2 {
+  left: calc(25% - 59px);
+}
+.control3 {
+  left: calc(25% - 39px);
+}
+.control4 {
+  left: calc(25% - 19px);
+}
+
+.control:hover {
+  background-color: white;
+  border: 2px solid white;
+}
+
+#meme1:checked ~ .meme-text1,
+#meme2:checked ~ .meme-text2,
+#meme3:checked ~ .meme-text3,
+#meme4:checked ~ .meme-text4 {
+  opacity: 1;
+}
+
+#meme1:checked ~ .control1,
+#meme2:checked ~ .control2,
+#meme3:checked ~ .control3,
+#meme4:checked ~ .control4 {
+  background-color: rgb(47, 47, 47);
 }
 
 @media (max-width: 767.98px) {
@@ -107,23 +123,27 @@ input[name="meme"] {
     padding: 20px 30px;
   }
 
-  .slider-info {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
+  .control {
+    left: 11%;
+    transform: translateX(50%);
+  }
+
+  .control1 {
+    left: calc(11.5% - 30px);
+  }
+
+  .control2 {
+    left: calc(11.5% - 10px);
+  }
+  .control3 {
+    left: calc(11.5% + 10px);
+  }
+  .control4 {
+    left: calc(11.5% + 30px);
   }
 
   .meme-text {
-    font-size: 24px;
-  }
-
-  .slider-controls {
-    order: 0;
-    margin: 30px 0;
-  }
-
-  .slider-text {
-    order: 2;
-    align-self: self-start;
+    font-size: 16px;
+    bottom: -60px;
   }
 }
