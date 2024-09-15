@@ -86,17 +86,17 @@ label {
 }
 
 .control1 {
-  left: calc(25% - 79px);
+  left: calc(25% - 81px);
 }
 
 .control2 {
-  left: calc(25% - 59px);
+  left: calc(25% - 61px);
 }
 .control3 {
-  left: calc(25% - 39px);
+  left: calc(25% - 41px);
 }
 .control4 {
-  left: calc(25% - 19px);
+  left: calc(25% - 21px);
 }
 
 .control:hover {
